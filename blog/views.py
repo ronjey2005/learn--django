@@ -5,4 +5,4 @@ from django.views import generic
 # Create your views here.
 class BlogView(generic.DetailView):
     model = Post
-    templates = "blog.html"
+    template_name = "blog.html"
