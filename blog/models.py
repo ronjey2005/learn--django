@@ -3,10 +3,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+STATUS = ((0, 'Draft'), (1, 'Published'))
 
 class Post(models.Model):
-    STATUS = ((0, 'Draft'), (1, 'Published'))
-
     title = models.CharField(max_length=200)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)

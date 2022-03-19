@@ -4,11 +4,10 @@
 <body>
 <h1>Blog</h1>
 <ul>
-    {% for blog_post in BlogListView %}
-    {{blog_post}}
-    {{blog_post.title}}
+    {{object_list}}
+    {% for blog_post in post_list %}
+    <li>{{blog_post.title}}</li>
     {% endfor %}
-    <li></li>
 </ul>
 </body>
 </html>
