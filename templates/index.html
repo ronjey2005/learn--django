@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Blog</h1>
+<ul>
+    {% for blog_post in BlogListView %}
+    {{blog_post}}
+    {{blog_post.title}}
+    {% endfor %}
+    <li></li>
+</ul>
+</body>
+</html>
