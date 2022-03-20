@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<h1>Blog</h1>
+{%extends "templates/base.html"%}
+{%block content%}
+<h2>Blog List</h2>
 <ul>
     {% for blog_post in blog_list_view %}
     <li><a href="{% url 'blog:blog_view' blog_post.slug  %}">{{blog_post.title}}</a></li>
     {% endfor %}
 </ul>
-</body>
-</html>
+{%endblock%}
+
