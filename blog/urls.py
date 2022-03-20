@@ -16,6 +16,8 @@ Including another URLconf
 from . import views
 from django.urls import path
 
+app_name = "blog"
+
 urlpatterns = [
     path('<slug:slug>', views.BlogView.as_view(), name="blog_view"),
     path('home/', views.HomeView.as_view(), name="home_view"),
