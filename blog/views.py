@@ -16,6 +16,10 @@ class BlogListView(generic.ListView):
     template_name = "templates/index.html"
     context_object_name = "blog_list_view"
 
-    print('\n')
-    print(queryset)
-    print('\n')
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(BlogListView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        # context['some_data'] = 'This is just some data'
+        context.update({'some_data1':'This is just some data1'})
+        return context
