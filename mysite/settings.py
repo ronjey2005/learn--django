@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #MY APPS
     'blog',
+    'translator',
 
     #DJANGO DEFAULT APPS
     'django.contrib.admin',
