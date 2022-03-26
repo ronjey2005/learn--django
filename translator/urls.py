@@ -19,5 +19,5 @@ from django.urls import path
 app_name = "translator"
 
 urlpatterns = [
-    path('', views.TranslatorView.as_view(), name="translator_view")
+    path('', views.TranslatorView, name="translator_view")
 ]
