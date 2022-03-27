@@ -9,7 +9,7 @@ def TranslatorView(request):
         return render(request,'templates/translator.html', context)
     else:
         #original_text = request.POST['my_textarea']
-        context = {"": ""}
+        context = {"original_text": "", "translated_text": ""}
         return render(request, 'templates/translator.html', context)
 
 

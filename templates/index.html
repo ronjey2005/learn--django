@@ -2,7 +2,7 @@
 {%block content%}
     <h2>Blog List</h2>
     {{some_data1}}
-    {% for blog_post in blog_list_view %}
+    {% for blog_post in blog_post_items %}
     <div class="card m-3">
         <div class="card-body">
             <h5 class="card-title">{{blog_post.title | title}}</h5>

@@ -14,7 +14,7 @@ class HomeView(generic.TemplateView):
 class BlogListView(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('date_created')
     template_name = "templates/index.html"
-    context_object_name = "blog_list_view"
+    context_object_name = "blog_post_items" #DICT key containing all the blog POSTS in queryset
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
