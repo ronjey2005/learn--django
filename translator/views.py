@@ -8,13 +8,20 @@ def TranslatorView(request):
         original_text = request.POST['my_textarea']
         dest_lang = request.POST['languages']
         print(dest_lang)
-
         translated_text = translate_input(original_text, dest_lang)
-        context = {"original_text": original_text, "translated_text": translated_text, "lang_codes": LANGUAGES}
+        context = {
+            "original_text": original_text,
+            "translated_text": translated_text,
+            "lang_codes": LANGUAGES,
+            "selected_lang": dest_lang
+        }
         return render(request,'templates/translator.html', context)
     else:
-        print(type(LANGUAGES))
-        context = {"original_text": "", "translated_text": "", "lang_codes": LANGUAGES}
+        context = {
+            "original_text": "",
+            "translated_text": "",
+            "lang_codes": LANGUAGES
+        }
         return render(request, 'templates/translator.html', context)
 
 
