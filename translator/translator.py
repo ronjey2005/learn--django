@@ -2,6 +2,7 @@ from googletrans import Translator
 
 def translate_input(user_text, dest_lang):
     translator = Translator()
-    translated_output = translator(text=user_text,dest=dest_lang).text
-    print(translated_output)
+    print(translator)
+    print(user_text + ' \n ' + dest_lang)
+    translated_output = translator.translate(user_text, dest=dest_lang).text
     return translated_output
