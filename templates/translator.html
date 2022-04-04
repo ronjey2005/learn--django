@@ -7,8 +7,10 @@
             <div class="col-sm-6 mt-3 left">
                 <textarea class="form-control" rows="3" name="my_textarea">{{original_text}}</textarea>
             </div>
-            <select>
-                {{lang_codes}}
+            <select name="languages">
+                {% for langCodes,langVals in lang_codes.items %}
+                <option value="{{langCodes}}">{{langVals}}</option>
+                {% endfor %}
             </select>
             <div class="col-sm-6 mt-3 left">
                 <textarea class="form-control" rows="3">{{translated_text}}</textarea>

@@ -6,12 +6,14 @@ from .translator import translate_input
 def TranslatorView(request):
     if request.method == 'POST':
         original_text = request.POST['my_textarea']
-        #translated_text = original_text.upper()
-        translated_text = translate_input(original_text, 'de')
+        dest_lang = request.POST['languages']
+        print(dest_lang)
+
+        translated_text = translate_input(original_text, dest_lang)
         context = {"original_text": original_text, "translated_text": translated_text, "lang_codes": LANGUAGES}
         return render(request,'templates/translator.html', context)
     else:
-        #original_text = request.POST['my_textarea']
+        print(type(LANGUAGES))
         context = {"original_text": "", "translated_text": "", "lang_codes": LANGUAGES}
         return render(request, 'templates/translator.html', context)
 
