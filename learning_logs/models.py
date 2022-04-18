@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Topic(models.Model):
     text = models.CharField(max_length=200)
@@ -7,3 +8,4 @@ class Topic(models.Model):
 
     def __str__(self):
         print(self.text)
+        return self.text
