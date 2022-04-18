@@ -9,11 +9,11 @@ class HomeView(generic.TemplateView):
 
 class BlogView(generic.DetailView):
     model = Post
-    template_name = "templates/blog.html"
+    template_name = "templates/blog/blog.html"
 
 class BlogListView(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('date_created')
-    template_name = "templates/blog-list.html"
+    template_name = "templates/blog/blog-list.html"
     context_object_name = "blog_post_items" #DICT key containing all the blog POSTS in queryset
 
     def get_context_data(self, **kwargs):

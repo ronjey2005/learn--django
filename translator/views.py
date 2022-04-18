@@ -15,14 +15,14 @@ def TranslatorView(request):
             "lang_codes": LANGUAGES,
             "selected_lang": dest_lang
         }
-        return render(request,'templates/translator.html', context)
+        return render(request,'templates/translator/translator.html', context)
     else:
         context = {
             "original_text": "",
             "translated_text": "",
             "lang_codes": LANGUAGES
         }
-        return render(request, 'templates/translator.html', context)
+        return render(request, 'templates/translator/translator.html', context)
 
 
 
