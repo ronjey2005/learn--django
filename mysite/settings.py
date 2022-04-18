@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     #MY APPS
     'blog',
     'translator',
+    'learning_logs',
 
     #DJANGO DEFAULT APPS
     'django.contrib.admin',
