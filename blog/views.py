@@ -21,5 +21,5 @@ class BlogListView(generic.ListView):
         context = super(BlogListView, self).get_context_data(**kwargs)
         # Create any data and add it to the context
         # context['some_data'] = 'This is just some data'
-        context.update({'some_data1':'This is just some data1'})
+        context.update({'some_data1' : 'This is just some data1'})
         return context
