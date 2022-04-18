@@ -4,16 +4,16 @@ from django.views import generic
 
 # Create your views here.
 
+class HomeView(generic.TemplateView):
+    template_name = "templates/home.html"
+
 class BlogView(generic.DetailView):
     model = Post
     template_name = "templates/blog.html"
 
-class HomeView(generic.TemplateView):
-    template_name = "templates/home.html"
-
 class BlogListView(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('date_created')
-    template_name = "templates/index.html"
+    template_name = "templates/blog-list.html"
     context_object_name = "blog_post_items" #DICT key containing all the blog POSTS in queryset
 
     def get_context_data(self, **kwargs):
