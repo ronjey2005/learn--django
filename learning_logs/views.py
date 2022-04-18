@@ -7,4 +7,4 @@ def topicsListView(request):
         "dummy_context": "hello"
     }
 
-    return render(request,'templates/learning_logs/topics-list.html', context)
+    return render(request,'templates/learning_logs/topics.html', context)

@@ -19,5 +19,5 @@ from django.urls import path
 app_name = "learning_logs"
 
 urlpatterns = [
-    path('', views.topicsListView, name="topics_list_view")
+    path('topics/', views.topicsListView, name="topics_list_view")
 ]
