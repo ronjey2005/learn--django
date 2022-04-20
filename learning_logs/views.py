@@ -5,10 +5,10 @@ def topicsListView(request):
 
     topics = Topic
 
-    print(dir(topics.objects))
+    print(topics.objects.all())
 
     context = {
-        "dummy_context": "hello"
+        "titles": topics.objects.all()
     }
 
     return render(request,'templates/learning_logs/topics.html', context)
