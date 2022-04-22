@@ -7,5 +7,4 @@ class Topic(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        print(self.text)
         return self.text

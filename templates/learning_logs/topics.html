@@ -4,7 +4,8 @@
     {% for topic_list in titles %}
     <div class="card m-3">
         <div class="card-body">
-            <h5 class="card-title">{{topic_list}}</h5>
+            <h5 class="card-title">{{topic_list.text}}</h5>
+            <span>{{topic_list.date_added}}</span>
         </div>
     </div>
     {% endfor %}
