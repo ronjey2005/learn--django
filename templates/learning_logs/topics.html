@@ -1,12 +1,17 @@
 {%extends "templates/base.html"%}
 {%block content%}
     <h2>Topic List</h2>
-    {% for topic_list in titles %}
+    {% for topic_list in topics %}
     <div class="card m-3">
         <div class="card-body">
             <h5 class="card-title">{{topic_list.text}}</h5>
             <span>{{topic_list.date_added}}</span>
-            <p>{{entries.text}}</p>
+            <p>{{topics_list.entry_set.all}}</p>
+            {% for entry in topics_list.entry_set.all %}
+            <p>{{entry.text}}</p>
+            {% empty %}
+            <p>The post has no comments.</p>
+            {% endfor %}
         </div>
     </div>
     {% endfor %}

@@ -5,19 +5,15 @@ def topicsListView(request):
 
     topics = Topic
 
-    entries = Entry
-
     context = {
-        "titles": [],
-        "entries": []
+        "topics": topics.objects.all()
     }
 
-    for topic in topics.objects.all():
-        context['titles'].append(topics.objects.get(id=topic.id))
-        context['entries'].append(entries.objects.get(topic_id=topic.id))
-        #print(topic.id)
+    # for topic in topics.objects.all():
+    #     e = topic.entry_set.all()
+    #     print(e)
 
-    print(context['entries'])
+    #print(context['topics'])
 
     return render(request,'templates/learning_logs/topics.html', context)
 
