@@ -13,9 +13,9 @@ def topicsListView(request):
     #     e = topic.entry_set.all()
     #     print(e)
 
-    #print(context['topics'])
+    print(context['topics'])
 
-    return render(request,'templates/learning_logs/topics.html', context)
+    return render(request, 'templates/learning_logs/topics.html', context)
 
 # def entryView(request):
 #

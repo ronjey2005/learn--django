@@ -6,8 +6,8 @@
         <div class="card-body">
             <h5 class="card-title">{{topic_list.text}}</h5>
             <span>{{topic_list.date_added}}</span>
-            <p>{{topics_list.entry_set.all}}</p>
-            {% for entry in topics_list.entry_set.all %}
+            <p>{{topics.entry_set.all}}</p>
+            {% for entry in topic_list.entry_set.all %}
             <p>{{entry.text}}</p>
             {% empty %}
             <p>The post has no comments.</p>
