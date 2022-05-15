@@ -10,8 +10,7 @@ def topicsListView(request):
         "topics": topics.objects.all()
     }
 
-    console.warn("---")
-    print(context['topics'])
+    #print(context['topics'])
 
     return render(request, 'templates/learning_logs/topics.html', context)
 
