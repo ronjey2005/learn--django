@@ -1,30 +1,34 @@
 from django.shortcuts import render
 from .models import Topic, Entry
+from py_console import console, bgColor, textColor
 
 def topicsListView(request):
 
     topics = Topic
 
-    entries = Entry
-
     context = {
-        "titles": [],
-        "entries": []
+        "topics": topics.objects.all()
     }
 
-    for topic in topics.objects.all():
-        context['titles'].append(topics.objects.get(id=topic.id))
-        context['entries'].append(entries.objects.get(topic_id=topic.id))
-        #print(topic.id)
+    console.warn("---")
+    print(context['topics'])
 
-    print(context['entries'])
+    return render(request, 'templates/learning_logs/topics.html', context)
 
-    return render(request,'templates/learning_logs/topics.html', context)
 
-# def entryView(request):
-#
-#     entry = Entry
-#
-#     context = {
-#
-#     }
+def topic(request, topic_id):
+
+    topic = Topic.objects.get(id=topic_id)
+    entries = topic.entry_set.all()
+
+    console.warn("---")
+    print(request)
+    print(topic_id)
+    console.warn("---")
+
+    context = {
+        "topic": topic,
+        "entries": entries
+    }
+
+    return render(request, 'templates/learning_logs/topic.html', context)
