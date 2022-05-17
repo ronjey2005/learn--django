@@ -18,7 +18,7 @@ def topicsListView(request):
 def topic(request, topic_id):
 
     topic = Topic.objects.get(id=topic_id)
-    entries = topic.entry_set.all()
+    entries = topic.entry_set.order_by('-date_added')
 
     console.warn("---")
     print(request)
