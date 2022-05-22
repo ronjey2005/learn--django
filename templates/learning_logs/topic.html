@@ -4,8 +4,8 @@
     {% for entry in entries %}
     <div class="card m-3">
         <div class="card-body">
-            <p>{{entry.text}}</p>
-            <span>{{entry.date_added}}</span>
+            <p>{{entry.text | linebreaks | truncatechars:255}}</p>
+            <span>{{entry.date_added | date:"D d M Y h:iA"}}</span>
         </div>
     </div>
     {% endfor %}
