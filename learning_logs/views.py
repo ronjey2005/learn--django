@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Topic, Entry
+from .forms import TopicForm
 from py_console import console, bgColor, textColor
 
-def topicsListView(request):
 
+def topicsListView(request):
     topics = Topic
 
     context = {
@@ -16,7 +17,6 @@ def topicsListView(request):
 
 
 def topic(request, topic_id):
-
     topic = Topic.objects.get(id=topic_id)
     entries = topic.entry_set.order_by('-date_added')
 
@@ -31,3 +31,14 @@ def topic(request, topic_id):
     }
 
     return render(request, 'templates/learning_logs/topic.html', context)
+
+def new_topic(request):
+    """add a new topic"""
+
+    form = TopicForm()
+
+    context = {
+        "": ''
+    }
+
+    return render(request, 'templates/learning_logs/new_topic.html', context)
